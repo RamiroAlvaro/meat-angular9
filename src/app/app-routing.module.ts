@@ -6,6 +6,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule)},
   {path: 'order-summary', component: OrderSummaryComponent},
   {path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule)},
+  {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
