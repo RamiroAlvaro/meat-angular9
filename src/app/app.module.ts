@@ -39,7 +39,7 @@ registerLocaleData(localePt);
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule.forRoot(),
   ],
   providers: [{
     provide: LOCALE_ID,
