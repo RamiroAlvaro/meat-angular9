@@ -16,8 +16,11 @@ export class RestaurantsService {
 
   constructor(private http: HttpClient) { }
 
-  restaurants(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`).pipe(
+  restaurants(search?: string): Observable<Restaurant[]> {
+    if (search === undefined){
+       search = '';
+    }
+    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`, {params: {q: search}}).pipe(
       map((obj) => obj),
       catchError(ErrorHandler.handleError)
     );
