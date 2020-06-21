@@ -20,6 +20,7 @@ import { registerLocaleData, LocationStrategy, HashLocationStrategy } from '@ang
 import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 registerLocaleData(localePt);
 
@@ -37,6 +38,7 @@ registerLocaleData(localePt);
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

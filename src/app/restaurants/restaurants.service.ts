@@ -15,11 +15,11 @@ export class RestaurantsService {
   constructor(private http: HttpClient) { }
 
   restaurants(search?: string): Observable<Restaurant[]> {
-    let httpParams: HttpParams;
+    let params: HttpParams;
     if (search) {
-      httpParams = new HttpParams().set('q', search);
+      params = new HttpParams().set('q', search);
     }
-    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`, {params: httpParams});
+    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`, {params});
   }
 
   restaurantById(id: string): Observable<Restaurant> {
