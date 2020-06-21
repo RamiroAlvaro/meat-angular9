@@ -22,7 +22,8 @@ const routes: Routes = [
       {path: 'reviews', component: ReviewsComponent}
     ]},
   {path: 'restaurants', component: RestaurantsComponent},
-  {path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule), canLoad: [LoggedinGuard]},
+  {path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule),
+   canLoad: [LoggedinGuard], canActivate: [LoggedinGuard]},
   {path: 'order-summary', component: OrderSummaryComponent},
   {path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule)},
   {path: '**', component: NotFoundComponent},
